@@ -14,9 +14,9 @@ import {
 // ----------------------------------------------------------------------
 
 export const _myAccount = {
-  displayName: 'Jaydon Frankie',
-  email: 'demo@minimals.cc',
-  photoURL: '/assets/images/avatar/avatar-25.webp',
+  displayName: 'Houda Assahsah',
+  email: 'Houda@muntmasters.com',
+  photoURL: '/assets/images/avatar/houda.png',
 };
 
 // ----------------------------------------------------------------------
@@ -106,7 +106,7 @@ export const _langs = [
   },
   {
     value: 'de',
-    label: 'German',
+    label: 'Dutch',
     icon: '/assets/icons/flags/ic-flag-de.svg',
   },
   {
