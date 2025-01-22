@@ -143,8 +143,8 @@ export const _tasks = [...Array(5)].map((_, index) => ({
 export const _notifications = [
   {
     id: _id(1),
-    title: 'Your order is placed',
-    description: 'waiting for shipping',
+    title: 'Clockwise Reminder',
+    description: 'Please fill your Clockwise',
     avatarUrl: null,
     type: 'order-placed',
     postedAt: _times(1),
@@ -153,7 +153,7 @@ export const _notifications = [
   {
     id: _id(2),
     title: _fullName(2),
-    description: 'answered to your comment on the Minimal',
+    description: 'Finished his task',
     avatarUrl: '/assets/images/avatar/avatar-2.webp',
     type: 'friend-interactive',
     postedAt: _times(2),
@@ -161,10 +161,10 @@ export const _notifications = [
   },
   {
     id: _id(3),
-    title: 'You have new message',
-    description: '5 unread messages',
-    avatarUrl: null,
-    type: 'chat-message',
+    title: _fullName(4),
+    description: 'Finished his task',
+    avatarUrl: '/assets/images/avatar/avatar-3.webp',
+    type: 'friend-interactive',
     postedAt: _times(3),
     isUnRead: false,
   },

@@ -58,7 +58,7 @@ export function NavDesktop({
         display: 'none',
         position: 'fixed',
         flexDirection: 'column',
-        bgcolor: 'var(--layout-nav-bg)',
+        bgcolor: '#001400',
         zIndex: 'var(--layout-nav-zIndex)',
         width: 'var(--layout-nav-vertical-width)',
         borderRight: `1px solid var(--layout-nav-border-color, ${varAlpha(theme.vars.palette.grey['500Channel'], 0.12)})`,
@@ -121,62 +121,57 @@ export function NavContent({ data, slots, workspaces, sx }: NavContentProps) {
     <>
       <Logo />
       <Box sx={{ height: 100 }} /> {/* Add gap between Logo and content */}
-
       {slots?.topArea}
-
       {/* <WorkspacesPopover data={workspaces} sx={{ my: 2 }} /> */}
-
       <Scrollbar fillContent>
-      <Box component="nav" display="flex" flex="1 1 auto" flexDirection="column" sx={sx}>
-        <Box component="ul" gap={0.5} display="flex" flexDirection="column">
-        {data.map((item) => {
-          const isActived = item.path === pathname;
+        <Box component="nav" display="flex" flex="1 1 auto" flexDirection="column" sx={sx}>
+          <Box component="ul" gap={0.5} display="flex" flexDirection="column">
+            {data.map((item) => {
+              const isActived = item.path === pathname;
 
-          return (
-          <ListItem disableGutters disablePadding key={item.title}>
-            <ListItemButton
-            disableGutters
-            component={RouterLink}
-            href={item.path}
-            sx={{
-              pl: 2,
-              py: 1,
-              gap: 2,
-              pr: 1.5,
-              borderRadius: 0.75,
-              typography: 'body2',
-              fontWeight: 'fontWeightMedium',
-              color: 'var(--layout-nav-item-color)',
-              minHeight: 'var(--layout-nav-item-height)',
-              ...(isActived && {
-              fontWeight: 'fontWeightSemiBold',
-              bgcolor: 'rgba(144, 238, 144, 0.3)', // light green with 30% opacity
-              color: 'green',
-              '&:hover': {
-              bgcolor: 'var(--layout-nav-item-hover-bg)',
-              },
-              }),
-            }}
-            >
-            <Box component="span" sx={{ width: 24, height: 24 }}>
-              {item.icon}
-            </Box>
+              return (
+                <ListItem disableGutters disablePadding key={item.title}>
+                  <ListItemButton
+                    disableGutters
+                    component={RouterLink}
+                    href={item.path}
+                    sx={{
+                      pl: 2,
+                      py: 1,
+                      gap: 2,
+                      pr: 1.5,
+                      borderRadius: 0.75,
+                      typography: 'body2',
+                      fontWeight: 'fontWeightMedium',
+                      color: 'white',
+                      minHeight: 'var(--layout-nav-item-height)',
+                      ...(isActived && {
+                        fontWeight: 'fontWeightSemiBold',
+                        bgcolor: 'rgba(144, 238, 144, 0.2)', // light green with 30% opacity
+                        color: 'green',
+                        '&:hover': {
+                          bgcolor: 'lightgreen',
+                        },
+                      }),
+                    }}
+                  >
+                    <Box component="span" sx={{ width: 24, height: 24 }}>
+                      {item.icon}
+                    </Box>
 
-            <Box component="span" flexGrow={1}>
-              {item.title}
-            </Box>
+                    <Box component="span" flexGrow={1}>
+                      {item.title}
+                    </Box>
 
-            {item.info && item.info}
-            </ListItemButton>
-          </ListItem>
-          );
-        })}
+                    {item.info && item.info}
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </Box>
         </Box>
-      </Box>
       </Scrollbar>
-
       {slots?.bottomArea}
-
       {/* <NavUpgrade /> */}
     </>
   );
